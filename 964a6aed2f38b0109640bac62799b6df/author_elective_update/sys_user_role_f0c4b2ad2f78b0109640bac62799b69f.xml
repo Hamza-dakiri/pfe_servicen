@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <encryption_context/>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_623223_u_res_srv.experience_user</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>experience_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-17 11:19:39</sys_created_on>
+        <sys_id>f0c4b2ad2f78b0109640bac62799b69f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_623223_u_res_srv.experience_user</sys_name>
+        <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
+        <sys_update_name>sys_user_role_f0c4b2ad2f78b0109640bac62799b69f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-17 11:19:39</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</application>
+        <file_path/>
+        <instance_id>bbcff856dbc2774852cec59705961916</instance_id>
+        <instance_name>dev87854</instance_name>
+        <name>sys_user_role_f0c4b2ad2f78b0109640bac62799b69f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><encryption_context/><grantable>true</grantable><includes_roles/><name>x_623223_u_res_srv.experience_user</name><requires_subscription>-1</requires_subscription><scoped_admin>false</scoped_admin><suffix>experience_user</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-06-17 11:19:39</sys_created_on><sys_id>f0c4b2ad2f78b0109640bac62799b69f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_623223_u_res_srv.experience_user</sys_name><sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package><sys_policy/><sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope><sys_update_name>sys_user_role_f0c4b2ad2f78b0109640bac62799b69f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-06-17 11:19:39</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>1544652431</payload_hash>
+        <record_name>x_623223_u_res_srv.experience_user</record_name>
+        <reverted_from/>
+        <source>164a6aed2f38b0109640bac62799b6e2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-17 11:19:39</sys_created_on>
+        <sys_id>3cc4faed2f78b0109640bac62799b608</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17a19b2b2400000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-17 11:19:39</sys_updated_on>
+        <type>Role</type>
+        <update_guid>74c4faed3778b0102db3db6704ee3e08</update_guid>
+        <update_guid_history>74c4faed3778b0102db3db6704ee3e08:1544652431</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_623223_u_res_srv.experience_user">984576212fb8b0109640bac62799b646</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-17 11:21:48</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>413de5c2601a43888dcd9f5715acb040</sys_id>
+        <sys_metadata>f0c4b2ad2f78b0109640bac62799b69f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_623223_u_res_srv.experience_user</sys_name>
+        <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
+        <sys_scope_delete display_value="">2a4f42dc61c2495bbe43c7c1b47d5d79</sys_scope_delete>
+        <sys_update_name>sys_user_role_f0c4b2ad2f78b0109640bac62799b69f</sys_update_name>
+        <sys_update_version display_value="sys_user_role_f0c4b2ad2f78b0109640bac62799b69f">3cc4faed2f78b0109640bac62799b608</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-17 11:21:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

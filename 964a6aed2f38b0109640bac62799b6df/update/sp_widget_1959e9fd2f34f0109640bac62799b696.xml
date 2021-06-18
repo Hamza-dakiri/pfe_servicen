@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, spUtil) {
+  /* widget controller */
+  var c = this;
+  spUtil.recordWatch($scope,"x_623223_u_res_srv_resume","",function(name,data){
+    spUtil.update($scope);
+  })
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>u_resume_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>u_resume_list</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  data.resumes = [];
+  var gr = new GlideRecord('x_623223_u_res_srv_resume');
+  gr.query();
+  while(gr.next()){
+    var resume = {};
+    resume.intitule = gr.getDisplayValue('u_intitule');
+    resume.description = gr.getDisplayValue('u_description');
+    resume.sys_id = gr.getUniqueValue();
+    data.resumes.push(resume);
+  }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-18 00:28:34</sys_created_on>
+        <sys_id>1959e9fd2f34f0109640bac62799b696</sys_id>
+        <sys_mod_count>41</sys_mod_count>
+        <sys_name>u_resume_list</sys_name>
+        <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
+        <sys_update_name>sp_widget_1959e9fd2f34f0109640bac62799b696</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-18 01:35:15</sys_updated_on>
+        <template><![CDATA[<table class="table">
+  <caption ng-if="c.data.resumes.length == 0">No Resumes</caption>
+  <thead class ="bg-primary">
+    <tr>
+      <th scope="col">Intitule </th>
+      <th scope="col">Description </th>
+      <th scope="col">Action </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat ="resume in c.data.resumes">
+      <td>{{resume.intitule}}</td>
+      <td>{{resume.description}}</td>
+    </tr>
+  </tbody>
+</table>]]></template>
+    </sp_widget>
+</record_update>
