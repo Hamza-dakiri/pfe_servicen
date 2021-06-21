@@ -11,7 +11,17 @@
   }
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>.mainForm{
+	margin: 30px
+}
+.resumeTitle{
+	color : white;
+  text-align:center;
+}
+label{
+color : white
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -40,16 +50,19 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-17 13:59:23</sys_created_on>
         <sys_id>e059d7652f3cb0109640bac62799b6f7</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>u_resume_add</sys_name>
         <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
         <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_widget_e059d7652f3cb0109640bac62799b6f7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-17 14:55:36</sys_updated_on>
-        <template><![CDATA[<form>
-  <div class="form-row">
+        <sys_updated_on>2021-06-18 23:55:55</sys_updated_on>
+        <template><![CDATA[<div class = "u_resume_edit">
+  <h2 class ="resumeTitle">
+    Manage your Resumes
+  </h2>
+  <form class ="mainForm">
     <div class="form-group col-md-6">
       <label for="Intitule">Intitule </label>
       <input type="text" class="form-control" ng-model="c.data.u_intitule" placeholder="Intitule">
@@ -58,8 +71,10 @@
       <label for="Description">Description </label>
       <input class="form-control" ng-model="c.data.u_description" placeholder="Description">
     </div>
-  </div>
-  <button type="submit" class="btn btn-info" ng-click = "c.addResume()">Submit</button>
-</form>]]></template>
+     <div class="form-group col-md-12">
+  			<button type="submit" class="btn btn-primary" ng-click = "c.addResume()" style="float: right;">Submit</button>
+    </div>
+  </form>
+</div>]]></template>
     </sp_widget>
 </record_update>
