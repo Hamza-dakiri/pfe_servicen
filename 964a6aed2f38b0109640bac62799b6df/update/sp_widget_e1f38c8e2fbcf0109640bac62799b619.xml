@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+  c.addExperience = function(){
+    c.server.update().then(function(response){
+      c.data = {};
+    })
+  }
+};]]></client_script>
         <controller_as>c</controller_as>
         <css/>
         <data_table>sp_instance</data_table>
@@ -9,7 +17,7 @@
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>u_heathcare_experience_add</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -17,20 +25,73 @@
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  if(!input){
+    return;
+  }
+  var gr = new GlideRecord('x_623223_u_res_srv_experience');
+  gr.initialize();
+  gr.u_title = input.u_title;
+  gr.u_description = input.u_description;
+	gr.u_start_date = input.u_start_date ;
+	gr.u_end_date = input.u_end_date ;
+  gr.insert();
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-18 11:44:10</sys_created_on>
         <sys_id>e1f38c8e2fbcf0109640bac62799b619</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>u_heathcare_experience_add</sys_name>
         <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
         <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_widget_e1f38c8e2fbcf0109640bac62799b619</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-18 11:44:10</sys_updated_on>
-        <template><![CDATA[<div><!-- your widget template --></div>]]></template>
+        <sys_updated_on>2021-06-21 13:12:32</sys_updated_on>
+        <template><![CDATA[<div><!-- your widget template -->
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Title</label>
+      <input type="text" class="form-control" ng-model="c.data.u_title"  id="inputEmail4" placeholder="Title">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Description</label>
+      <textarea id="story"  name="story" class="form-control" ng-model="c.data.u_description" rows="5" cols="33" placeholder="Description">
+
+      </textarea>
+    </div>
+
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Start Date</label>
+      <input type="date" class="form-control" ng-model="c.data.u_start_date"  id="StartDate">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">End date</label>
+        <input type="date" class="form-control" ng-model="c.data.u_end_date"  id="EndDate">
+      </div>
+    
+  </div>
+  <div class="form-group col-md-12">
+  			<button type="submit" class="btn btn-primary" ng-click = "c.addExperience()" style="float: right;">Submit</button>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+</div>]]></template>
     </sp_widget>
 </record_update>
