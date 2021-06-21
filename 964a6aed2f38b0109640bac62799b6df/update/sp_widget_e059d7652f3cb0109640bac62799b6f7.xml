@@ -9,6 +9,11 @@
       c.data = {};
     })
   }
+	$rootScope.$on('myResume', function(event,data) { 
+			console.log('Listener caught ID: ' + $rootScope.resumeID.intitule);
+      c.data.u_intitule = $rootScope.resumeID.intitule;
+      c.data.u_description = $rootScope.resumeID.description; 
+		});
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.mainForm{
@@ -50,14 +55,14 @@ color : white
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-17 13:59:23</sys_created_on>
         <sys_id>e059d7652f3cb0109640bac62799b6f7</sys_id>
-        <sys_mod_count>43</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>u_resume_add</sys_name>
         <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
         <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_widget_e059d7652f3cb0109640bac62799b6f7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-18 23:55:55</sys_updated_on>
+        <sys_updated_on>2021-06-21 16:27:52</sys_updated_on>
         <template><![CDATA[<div class = "u_resume_edit">
   <h2 class ="resumeTitle">
     Manage your Resumes
