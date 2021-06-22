@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
-  /* widget controller */
+        <client_script><![CDATA[api.controller = function () {
   var c = this;
-  c.addResume = function(){
-    c.server.update().then(function(response){
+  c.addResume = function() {
+		c.data.action = "addResume";
+    c.server.update().then(function (response) {
       c.data = {};
-    })
-  }
-	$rootScope.$on('myResume', function(event,data) { 
-			console.log('Listener caught ID: ' + $rootScope.resumeID.intitule);
-      c.data.u_intitule = $rootScope.resumeID.intitule;
-      c.data.u_description = $rootScope.resumeID.description; 
-		});
+    });
+  };
+  c.updateResume = function() {
+    c.data.action = "updateResume";
+    c.server.update().then(function () {
+      c.data.action = undefined;
+			c.data = {};
+    });
+  };
+
+  $rootScope.$on("myResume", function () {
+    c.data.sys_id = $rootScope.resumeID.sys_id;
+    c.data.u_intitule = $rootScope.resumeID.intitule;
+    c.data.u_description = $rootScope.resumeID.description;
+  });
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.mainForm{
@@ -26,7 +34,10 @@
 label{
 color : white
 }
-</css>
+.btn_update{
+	float: right;
+	margin-right: 5px;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -40,46 +51,81 @@ color : white
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {
-  if(!input){
-    return;
-  }
-  var gr = new GlideRecord('x_623223_u_res_srv_resume');
+        <script><![CDATA[var gr = new GlideRecord('x_623223_u_res_srv_resume');
+(function() {
+  if(input && input.action == 'addResume'){
   gr.initialize();
   gr.u_intitule = input.u_intitule;
   gr.u_description = input.u_description;
   gr.insert();
+	}
+})();
+
+
+(function(){
+  if(input && input.action == 'updateResume'){
+    gr.addQuery('sys_id', input.sys_id);
+    gr.query();
+    if (gr.next()) {
+    gr.u_intitule = input.u_intitule;
+    gr.u_description = input.u_description;
+    gr.update();
+    }
+  }
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-17 13:59:23</sys_created_on>
         <sys_id>e059d7652f3cb0109640bac62799b6f7</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>114</sys_mod_count>
         <sys_name>u_resume_add</sys_name>
         <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
         <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_widget_e059d7652f3cb0109640bac62799b6f7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-21 16:27:52</sys_updated_on>
-        <template><![CDATA[<div class = "u_resume_edit">
-  <h2 class ="resumeTitle">
-    Manage your Resumes
-  </h2>
-  <form class ="mainForm">
+        <sys_updated_on>2021-06-22 00:55:39</sys_updated_on>
+        <template><![CDATA[<div class="u_resume_edit">
+  <h2 class="resumeTitle">Manage your Resumes</h2>
+  <input type="hidden" class="form-control" ng-model="c.data.sys_id" />
+  <form class="mainForm">
     <div class="form-group col-md-6">
       <label for="Intitule">Intitule </label>
-      <input type="text" class="form-control" ng-model="c.data.u_intitule" placeholder="Intitule">
+      <input
+        type="text"
+        class="form-control"
+        ng-model="c.data.u_intitule"
+        placeholder="Intitule"
+      />
     </div>
     <div class="form-group col-md-6">
       <label for="Description">Description </label>
-      <input class="form-control" ng-model="c.data.u_description" placeholder="Description">
+      <input
+        class="form-control"
+        ng-model="c.data.u_description"
+        placeholder="Description"
+      />
     </div>
-     <div class="form-group col-md-12">
-  			<button type="submit" class="btn btn-primary" ng-click = "c.addResume()" style="float: right;">Submit</button>
+    <div class="form-group col-md-12">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        ng-click="c.addResume()"
+        style="float: right"
+      >
+        Submit
+      </button>
+      <button
+        type="submit"
+        class="btn btn-secondary btn_update"
+        ng-click="c.updateResume()"
+      >
+        Update
+      </button>
     </div>
   </form>
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
 </record_update>
