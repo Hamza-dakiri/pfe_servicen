@@ -31,7 +31,7 @@
     <sys_translated_text action="DELETE" query="documentkey=885d25352f74f0109640bac62799b6c3"/>
     <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</application>
+        <application display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</application>
         <file_path/>
         <instance_id>bbcff856dbc2774852cec59705961916</instance_id>
         <instance_name>dev87854</instance_name>
@@ -64,10 +64,10 @@
         <sys_metadata>885d25352f74f0109640bac62799b6c3</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
-        <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
+        <sys_package display_value="u_Resume_Management" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
+        <sys_scope display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_scope_delete display_value="">2a4f42dc61c2495bbe43c7c1b47d5d79</sys_scope_delete>
         <sys_update_name>sp_instance_885d25352f74f0109640bac62799b6c3</sys_update_name>
         <sys_update_version display_value="sp_instance_885d25352f74f0109640bac62799b6c3">315da5352f74f0109640bac62799b6a6</sys_update_version>

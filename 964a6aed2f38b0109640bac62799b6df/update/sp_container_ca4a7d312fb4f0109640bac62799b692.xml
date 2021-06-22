@@ -16,9 +16,9 @@
         <sys_id>ca4a7d312fb4f0109640bac62799b692</sys_id>
         <sys_mod_count>6</sys_mod_count>
         <sys_name>u_resume_manage - Container 1</sys_name>
-        <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
+        <sys_package display_value="u_Resume_Management" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
-        <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
+        <sys_scope display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_container_ca4a7d312fb4f0109640bac62799b692</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-06-19 00:02:16</sys_updated_on>

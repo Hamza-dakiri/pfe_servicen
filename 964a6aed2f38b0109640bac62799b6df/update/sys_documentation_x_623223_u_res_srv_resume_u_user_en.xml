@@ -11,12 +11,12 @@
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-06-17 10:43:22</sys_created_on>
-            <sys_id>d97ceaa52f78b0109640bac62799b624</sys_id>
+            <sys_id>b9d8044b2ff470109640bac62799b68d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>User</sys_name>
-            <sys_package display_value="u_res_srv" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
+            <sys_package display_value="u_Resume_Management" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
             <sys_policy/>
-            <sys_scope display_value="u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_scope>
+            <sys_scope display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</sys_scope>
             <sys_update_name>sys_documentation_x_623223_u_res_srv_resume_u_user_en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2021-06-17 10:43:22</sys_updated_on>
