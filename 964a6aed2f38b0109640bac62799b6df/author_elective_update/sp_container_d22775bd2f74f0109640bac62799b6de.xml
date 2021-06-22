@@ -51,7 +51,7 @@
         <update_guid_history>992af171d1b4f01090aca8b1b44d6ec1:515525929,4b693d3130b4f0106ee504fec216bfc4:518753352,1a297531d7b4f0102099e45b2cf7234e:-157063637,c2f771fdd574f010f29b467d07d069e0:1104194434,1ab77dbd8874f010b03f1839bf4c35b0:292642527,da2775bdc674f0104297b8af112d6fdf:1999536251</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="">513ab9712fb4f0109640bac62799b6e5</sys_audit_delete>
+        <sys_audit_delete display_value="u_resume_manage - Container 2">513ab9712fb4f0109640bac62799b6e5</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-18 01:42:18</sys_created_on>

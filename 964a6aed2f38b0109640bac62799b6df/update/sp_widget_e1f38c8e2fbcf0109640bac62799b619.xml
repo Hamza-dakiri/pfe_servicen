@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
+        <client_script><![CDATA[api.controller = function ($scope) {
   /* widget controller */
   var c = this;
-  c.addExperience = function(){
-    c.server.update().then(function(response){
+  c.addExperience = function () {
+    c.server.update().then(function (response) {
       c.data = {};
-    })
-  }
-$rootScope.$on("resumeExperience", function () {
-    c.data.sys_id = $rootScope.resumeID.sys_id; 
-	console.log(c.data.id);
-
-});
-
-};]]></client_script>
+    });
+  };
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>label{
 color : white;
@@ -40,32 +35,33 @@ h2{
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {
-  if(!input){
+        <script><![CDATA[(function () {
+  if (!input) {
     return;
   }
-  var gr = new GlideRecord('x_623223_u_res_srv_experience');
+  var gr = new GlideRecord("x_623223_u_res_srv_experience");
   gr.initialize();
   gr.u_title = input.u_title;
   gr.u_description = input.u_description;
-	gr.u_start_date = input.u_start_date ;
-	gr.u_end_date = input.u_end_date;
-	gr.u_resume = input.sys_id ;
+  gr.u_start_date = input.u_start_date;
+  gr.u_end_date = input.u_end_date;
+  //gr.u_resume = input.sys_id;
   gr.insert();
-})();]]></script>
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-18 11:44:10</sys_created_on>
         <sys_id>e1f38c8e2fbcf0109640bac62799b619</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>76</sys_mod_count>
         <sys_name>u_experience_add</sys_name>
         <sys_package display_value="u_Resume_Management" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
         <sys_scope display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_widget_e1f38c8e2fbcf0109640bac62799b619</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-22 11:18:43</sys_updated_on>
+        <sys_updated_on>2021-06-22 12:13:24</sys_updated_on>
         <template><![CDATA[<div><!-- your widget template -->
   <h2>Add Experience</h2>
 <form class="u_experience_form">
