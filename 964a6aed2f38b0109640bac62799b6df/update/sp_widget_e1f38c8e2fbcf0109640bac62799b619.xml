@@ -11,17 +11,26 @@
   }
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>label{
+color : white;
+}
+.u_experience_form{
+    margin: 25px;
+}
+h2{
+    color: white;
+    text-align: center;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>u_heathcare_experience_add</id>
+        <id>u_experience_add</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>u_heathcare_experience_add</name>
+        <name>u_experience_add</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -34,7 +43,8 @@
   gr.u_title = input.u_title;
   gr.u_description = input.u_description;
 	gr.u_start_date = input.u_start_date ;
-	gr.u_end_date = input.u_end_date ;
+	gr.u_end_date = input.u_end_date;
+	gr.u_resume = ;
   gr.insert();
 })();]]></script>
         <servicenow>false</servicenow>
@@ -42,16 +52,17 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-18 11:44:10</sys_created_on>
         <sys_id>e1f38c8e2fbcf0109640bac62799b619</sys_id>
-        <sys_mod_count>24</sys_mod_count>
-        <sys_name>u_heathcare_experience_add</sys_name>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>u_experience_add</sys_name>
         <sys_package display_value="u_Resume_Management" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
         <sys_scope display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_widget_e1f38c8e2fbcf0109640bac62799b619</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-21 15:10:59</sys_updated_on>
+        <sys_updated_on>2021-06-22 10:14:44</sys_updated_on>
         <template><![CDATA[<div><!-- your widget template -->
-<form>
+  <h2>Add Experience</h2>
+<form class="u_experience_form">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Title</label>
@@ -60,7 +71,6 @@
     <div class="form-group col-md-6">
       <label for="inputPassword4">Description</label>
       <textarea id="story"  name="story" class="form-control" ng-model="c.data.u_description" rows="5" cols="33" placeholder="Description">
-
       </textarea>
     </div>
 
@@ -70,12 +80,12 @@
       <label for="inputCity">Start Date</label>
       <input type="date" class="form-control" ng-model="c.data.u_start_date"  id="StartDate">
     </div>
+  </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">End date</label>
         <input type="date" class="form-control" ng-model="c.data.u_end_date"  id="EndDate">
-      </div>
-    
+      </div> 
   </div>
   <div class="form-group col-md-12">
   			<button type="submit" class="btn btn-primary" ng-click = "c.addExperience()" style="float: right;">Submit</button>

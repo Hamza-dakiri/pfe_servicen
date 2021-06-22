@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,spUtil) {
+  /* widget controller */
+  var c = this;
+	  spUtil.recordWatch($scope,"x_623223_u_res_srv_experience","",function(name,data){
+    spUtil.update($scope);
+  })
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>u_experience_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>u_experience_list</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[var gr = new GlideRecord("x_623223_u_res_srv_experience");
+(function () {
+  data.experiences = [];
+    gr.query();
+    while (gr.next()) {
+      var experience = {};
+      experience.title = gr.getDisplayValue("u_title");
+      experience.description = gr.getDisplayValue("u_description");
+      experience.startdate = gr.getDisplayValue("u_start_date");
+			experience.enddate = gr.getDisplayValue("u_end_date");
+			experience.sys_id = gr.getUniqueValue();
+      data.experiences.push(experience);
+    }
+  })();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-22 09:49:06</sys_created_on>
+        <sys_id>4bffc89f2f3030109640bac62799b6dc</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>u_experience_list</sys_name>
+        <sys_package display_value="u_Resume_Management" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</sys_scope>
+        <sys_update_name>sp_widget_4bffc89f2f3030109640bac62799b6dc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-22 10:10:18</sys_updated_on>
+        <template><![CDATA[<div>
+  <table class="table">
+  <caption ng-if="c.data.experiences.length == 0">No Experiences</caption>
+  <thead class ="bg-primary">
+    <tr>
+      <th scope="col">Title </th>
+      <th scope="col">Description </th>
+      <th scope="col">Start Date </th>
+      <th scope="col">End Date  </th>
+      <th scope="col">Action </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat ="exp in c.data.experiences">
+      <td>{{exp.title}}</td>
+      <td>{{exp.description}}</td>
+      <td>{{exp.startdate}}</td>
+      <td>{{exp.enddate}}</td>
+      <td>
+       <a href="#" ng-click="c.deleteExperience(exp)" class ="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>
