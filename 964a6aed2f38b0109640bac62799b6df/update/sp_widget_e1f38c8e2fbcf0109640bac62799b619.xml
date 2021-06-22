@@ -9,6 +9,12 @@
       c.data = {};
     })
   }
+$rootScope.$on("resumeExperience", function () {
+    c.data.sys_id = $rootScope.resumeID.sys_id; 
+	console.log(c.data.id);
+
+});
+
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>label{
@@ -44,7 +50,7 @@ h2{
   gr.u_description = input.u_description;
 	gr.u_start_date = input.u_start_date ;
 	gr.u_end_date = input.u_end_date;
-	gr.u_resume = ;
+	gr.u_resume = input.sys_id ;
   gr.insert();
 })();]]></script>
         <servicenow>false</servicenow>
@@ -52,14 +58,14 @@ h2{
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-18 11:44:10</sys_created_on>
         <sys_id>e1f38c8e2fbcf0109640bac62799b619</sys_id>
-        <sys_mod_count>46</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>u_experience_add</sys_name>
         <sys_package display_value="u_Resume_Management" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
         <sys_scope display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_widget_e1f38c8e2fbcf0109640bac62799b619</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-22 10:14:44</sys_updated_on>
+        <sys_updated_on>2021-06-22 11:18:43</sys_updated_on>
         <template><![CDATA[<div><!-- your widget template -->
   <h2>Add Experience</h2>
 <form class="u_experience_form">
@@ -87,6 +93,7 @@ h2{
         <input type="date" class="form-control" ng-model="c.data.u_end_date"  id="EndDate">
       </div> 
   </div>
+  <input type="hidden" class="form-control" ng-model="c.data.sys_id" />
   <div class="form-group col-md-12">
   			<button type="submit" class="btn btn-primary" ng-click = "c.addExperience()" style="float: right;">Submit</button>
     </div>

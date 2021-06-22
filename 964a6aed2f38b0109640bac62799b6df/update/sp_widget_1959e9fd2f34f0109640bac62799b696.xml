@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, spUtil) {
+        <client_script><![CDATA[api.controller = function($scope, spUtil , spModal) {
   /* widget controller */
   var c = this;
   spUtil.recordWatch($scope,"x_623223_u_res_srv_resume","",function(name,data){
@@ -25,7 +25,13 @@
   c.editResume = function(resume) {
 		$rootScope.resumeID = resume;
 		$rootScope.$emit('myResume', resume);  
+	}	
+		c.resumeExperience = function(resume) {
+		$rootScope.resumeID = resume;
+		$rootScope.$emit('resumeExperience', resume);
   } 
+	
+	
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -69,14 +75,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-06-18 00:28:34</sys_created_on>
         <sys_id>1959e9fd2f34f0109640bac62799b696</sys_id>
-        <sys_mod_count>229</sys_mod_count>
+        <sys_mod_count>236</sys_mod_count>
         <sys_name>u_resume_list</sys_name>
         <sys_package display_value="u_Resume_Management" source="x_623223_u_res_srv">964a6aed2f38b0109640bac62799b6df</sys_package>
         <sys_policy/>
         <sys_scope display_value="u_Resume_Management">964a6aed2f38b0109640bac62799b6df</sys_scope>
         <sys_update_name>sp_widget_1959e9fd2f34f0109640bac62799b696</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-22 09:43:35</sys_updated_on>
+        <sys_updated_on>2021-06-22 11:11:09</sys_updated_on>
         <template><![CDATA[<div>
   <table class="table">
   <caption ng-if="c.data.resumes.length == 0">No Resumes</caption>
@@ -92,8 +98,20 @@
       <td>{{resume.intitule}}</td>
       <td>{{resume.description}}</td>  
       <td>
+        
        <a href="#" ng-click="c.editResume(resume)" class ="btn btn-info">Edit</a> 
        <a href="#" ng-click="c.deleteResume(resume)" class ="btn btn-danger">Delete</a>
+       <div class="btn-group">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        More
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="?id=u_experience_management" ng-click="c.resumeExperience(resume)" >Experience</a>
+        <a class="dropdown-item" href="#">Conference</a>
+        <a class="dropdown-item" href="#">Similaire </a>
+      </div>
+    </div>
+      
       </td>
     </tr>
   </tbody>
